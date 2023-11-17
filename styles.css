@@ -60,11 +60,6 @@ body {
 }
 
 
-.btn:hover {
-  background: #0ca6bb;
-  color: #121212;
-}
-
 .num {
   background-color: #404040;
   color: #fcfcfc;
@@ -93,6 +88,14 @@ body {
   flex: 1;
 }
 
-.btn:active {
-  font-size: 14px;
+.active {
+  background: #ffffff;
+  color: #ff9c12;
+  transition: background-color 0.5s ease;
 }
+
+.btn:active {
+  transition: background-color 0.5s ease;
+  background: #b4b4b4;
+}
+

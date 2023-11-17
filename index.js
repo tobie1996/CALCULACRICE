@@ -13,6 +13,7 @@ let screenContent;
 
 
 //pour ecrire des chiffre les un apres les autres
+
 buttons.forEach((button) => {
     button.addEventListener("click", (e) => {
       if (!operation) {
@@ -31,6 +32,7 @@ buttons.forEach((button) => {
 
 operators.forEach((operator) => {
   operator.addEventListener("click", (e) => {
+    
     if (operation && num2) {
       switch (operation) {
         case "+":
@@ -96,6 +98,7 @@ operators.forEach((operator) => {
 });
 
 //Change value from positive to negative and vice-versa
+
 togglePlusMinusBtn.addEventListener("click", (e) => {
   if (num1 && !num2 && !result) {
     num1 = num1 < 0 ? Math.abs(num1) : -Math.abs(num1);
@@ -113,6 +116,7 @@ togglePlusMinusBtn.addEventListener("click", (e) => {
 });
 
 //Divide number in screen by 100 when clicked...
+
 percentOperatorBtn.addEventListener("click", (e) => {
   if (num1 && !num2 && !result) {
     num1 = Number(num1) / 100;
@@ -137,7 +141,39 @@ resetBtn.addEventListener("click", (e) => {
   operation = "";
   result = 0;
   screen.textContent = 0;
+  activeButton.classList.remove("active");
+});
+
+const functions = document.querySelectorAll(".function");
+const numeric = document.querySelectorAll(".num");
+const operator = document.querySelectorAll(".operator");
+let activeButton = numeric[0];
+
+operator.forEach(button => {
+  button.addEventListener("click", () => {
+    activeButton.classList.remove("active");
+    button.classList.add("active");
+    activeButton = button;
+  });
+});
+
+functions.forEach(button => {
+  button.addEventListener("click", () => {
+    button.style.background = "#fffefe";
+    setTimeout(() => {
+      button.style.background = "#b4b4b4";
+      button.style.transition = "background-color 0.5s ease";
+    }, 100);
+  });
 });
 
 
-// Music by Coma-Media from Pixabay
+
+
+
+
+
+
+
+
+
