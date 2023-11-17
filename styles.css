@@ -59,6 +59,12 @@ body {
   font-size: 20px;
 }
 
+
+.btn:hover {
+  background: #b4b4b4;
+  color: #121212;
+}
+
 .num {
   background-color: #404040;
   color: #fcfcfc;

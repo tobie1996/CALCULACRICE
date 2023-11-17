@@ -57,11 +57,15 @@ operators.forEach((operator) => {
           screen.textContent = result;
           break;
 
-        case "÷":
-          result = result ? result / Number(num2) : Number(num1) / Number(num2);
-          num1 = "";
-          num2 = "";
-          screen.textContent = result;
+          case "÷":
+            if (Number(num2) === 0) {
+              screen.textContent = "syntax error";
+            } else {
+              result = result ? result / Number(num2) : Number(num1) / Number(num2);
+              num1 = "";
+              num2 = "";
+              screen.textContent = result;
+            }
           break;
 
         case "=":
