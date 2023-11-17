@@ -15,7 +15,6 @@ let screenContent;
 //pour ecrire des chiffre les un apres les autres
 buttons.forEach((button) => {
     button.addEventListener("click", (e) => {
-      let buttonText = e.target.textContent;
       if (!operation) {
         num1 += e.target.textContent;
         screen.textContent = num1;
