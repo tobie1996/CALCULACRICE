@@ -168,6 +168,23 @@ functions.forEach(button => {
 });
 
 
+// function for display hour
+
+const hourEl = document.querySelector('.hour');
+const minuteEl = document.querySelector('.minute');
+valueEl = document.querySelector('.value')
+
+
+// Set up the time
+
+setInterval(()=> {
+    currentTime = new Date();
+    const currentHour = currentTime.getHours();
+    const currentMinute = currentTime.getMinutes();
+
+    hourEl.textContent = currentHour.toString();
+    minuteEl.textContent = currentMinute.toString();
+}, 1000);
 
 
 
